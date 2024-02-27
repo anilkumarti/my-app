@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import ExpenseItem  from "./components/ExpenseItem";
+function App() 
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>
+      The dark world of illegal loan apps in India
+      </h2>
+     <ExpenseItem></ExpenseItem>
+     <p>
+     Borrowers are harassed by reps of lending apps
+      who abuse, threaten and blackmail them by accessing
+       their contacts, pics.
+     </p>
     </div>
   );
-}
 
+}
 export default App;
