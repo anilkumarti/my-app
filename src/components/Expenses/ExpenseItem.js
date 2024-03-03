@@ -3,20 +3,25 @@ import React from 'react';
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import ExpenseDetails from "./ExpenseDetails";
- import Card from "./Card.js";
+ //import Card from "./Card.js";
 
 const ExpenseItem=(props)=> {
+  const clickHandler=()=>
+  {
+     const expense_item=document.querySelector('.expense-item');
+      expense_item.remove();
+  }
   return (
-    <Card className="expense-item">
+    <div className="expense-item">
           <ExpenseDate date={props.date} />
             
          
            <div className="expense-item__description">
      
-       <ExpenseDetails amount={props.amount} location={props.location} tittle={props.tittle} />
+       <ExpenseDetails amount={props.amount} location={props.location} title={props.title} />
        </div>
-    
-    </Card>
-  );
+      <button onClick={clickHandler}>Change Title</button>
+    </div>
+  )
 }
 export default ExpenseItem;
