@@ -1,7 +1,7 @@
-//import React from 'react';
+import React from 'react';
 //import ExpenseItem  from "./components/Expenses/ExpenseItem";
 import Card from "./components/Expenses/Card";
-
+import ExpenseForm from './components/Expenses/ExpenseForm';
 import Expenses from "./components/Expenses/Expenses";
 
 const App=()=> 
@@ -14,11 +14,13 @@ const App=()=>
   return (
     <Card>
        <h1> Expense Tracker</h1>
+       <ExpenseForm></ExpenseForm>
       <Expenses expenses={expenses}/>
      
-  
      
+      
     </Card>
+    
   );
 
 }
