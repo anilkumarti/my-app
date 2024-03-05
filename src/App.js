@@ -1,8 +1,8 @@
 import React from 'react';
 //import ExpenseItem  from "./components/Expenses/ExpenseItem";
-import Card from "./components/Expenses/Card";
-import ExpenseForm from './components/Expenses/ExpenseForm';
-import Expenses from "./components/Expenses/Expenses";
+import Card from './components/Expense/Card'
+import ExpenseForm from './components/Expense/NewExpense/ExpenseForm';
+import Expenses from "./components/Expense/Expenses";
 
 const App=()=> 
 {    const expenses=[ {title: "Gym", amount: 235, date:new Date(2011,11,28),location: "Rampur" },

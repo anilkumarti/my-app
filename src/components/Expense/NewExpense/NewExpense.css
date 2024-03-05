@@ -1,0 +1,16 @@
+.new-expense {
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: fit-content;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (min-width: 768px) {
+    .new-expense {
+      width: auto; /* Allow the form to dictate the width on larger screens */
+      padding: 2rem;
+    }
+  }
+  

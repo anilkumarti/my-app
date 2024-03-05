@@ -1,0 +1,55 @@
+/* Overall form layout and spacing */
+form {
+    max-width: 400px; /* Set a max-width for the form to make it smaller */
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles for each form control group */
+  .new-expense__controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Use gap to evenly space children */
+  }
+  
+  .new-expense__control {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-expense__control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem; /* Slightly reduce font size */
+  }
+  
+  .new-expense__control input {
+    font: inherit;
+    padding: 0.4rem; /* Reduce padding to decrease height */
+    border-radius: 4px; /* Smaller border radius for a more subtle look */
+    border: 1px solid #ccc;
+    font-size: 0.9rem; /* Match input font size with label */
+  }
+  
+  /* Button styling */
+  .new-expense__actions {
+    text-align: right;
+    margin-top: 1rem; /* Ensure there's some space above the button */
+  }
+  
+  .new-expense__actions button {
+    font-size: 0.9rem; /* Reduce button font size */
+    color: white;
+    background-color: #40005d;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .new-expense__actions button:hover,
+  .new-expense__actions button:active {
+    background-color: #510674;
+  }
+  
