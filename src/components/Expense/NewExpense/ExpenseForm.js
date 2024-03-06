@@ -3,31 +3,49 @@ import "./ExpenseForm.css";
 
 function ExpenseForm()
 {   
- 
+    
   
   const [userInput,setUserInput]=useState({enteredTitle: '', enteredAmount:  '', enteredDate:''});
 function titleChangeHandler(event)
+{  
+     setUserInput((prevState)=> { 
+       return({...userInput,enteredTitle:event.target.value})
+     });
+}   
+ function amountChangeHandler(event) 
 { 
-     setUserInput({...userInput,enteredTitle:event.target.value})
-}    function amountChangeHandler(event) 
-{ 
- setUserInput({...userInput,enteredAmount:event.target.value})
+ setUserInput((prevState)=> {
+  return ({...userInput,enteredAmount:event.target.value});
+ })
 }
  function dateChangeHandler(event) {
-  setUserInput({...userInput,enteredDate:event.target.value})
+  setUserInput((prevState)=> {
+    return ({...userInput,enteredDate:event.target.value})
+  })
+ }  
+ function handleSubmit(e)
+ { e.preventDefault()
+ const expData= {
+  title:userInput.enteredTitle,
+  amount:userInput.enteredAmount,
+  date: userInput.enteredDate
+ } ;
+ console.log(expData)
+
  }
+
     return(
-    <form>
+    <form  onSubmit={handleSubmit}>
       <div className='new-expense__controls'> 
        <div className='new-expense__control'> 
        <label> Tittle </label>
-       <input type="Text"  />
+       <input type="Text"  onChange={titleChangeHandler} />
          
        </div>
-       <div className='new-expense__control' onChange={titleChangeHandler}> 
+       <div className='new-expense__control' > 
        <label> Amount </label>
        <input type="Number" min="0.01" step="0.01" onChange={amountChangeHandler} /> 
-       <p> The amount will be{userInput.enteredAmount}</p>
+  
        </div>
        <div className='new-expense__control'> 
        <label> Date</label>
