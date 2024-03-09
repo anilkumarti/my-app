@@ -26,6 +26,7 @@ const App=()=>
   return (
     <Card>
        <h1> Expense Tracker</h1>
+        console.log(expenses)
       <NewExpense onAddExpense={addExpenseHandle}/>
       <Expenses expenses={expenses}/>
      
