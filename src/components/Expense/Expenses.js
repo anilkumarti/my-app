@@ -5,18 +5,18 @@ import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpenseFIlter";
 
 function Expenses(props) {
-  const [filteredYear,setFilteredYear]=useState('2017');
+  const [filteredYear,setFilteredYear]=useState('2024');
   const filterChangeHandler=(selectedYear)=>
   {
     setFilteredYear(selectedYear)
-  }
-  return (
-    <div className="expenses">
-      <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter>
-      {
-      
-      props.expenses && props.expenses.filter(item=>item.date.getFullYear().toString()==filteredYear)
-     .map((element) => (
+  } 
+  const filteredExpneses= props.expenses && props.expenses.filter(item=> 
+    { return item.date.getFullYear().toString()===filteredYear});
+
+    let expensesContent=<p>Only single Expense here. Please add more..</p>;
+    if(expensesContent.length>0)
+    {
+ expensesContent=filteredExpneses.map((element) => (
           <ExpenseItem
           key={element.id}
             title={element.title}
@@ -24,7 +24,17 @@ function Expenses(props) {
             date={element.date}
             location={element.location}
           ></ExpenseItem>
-        ))}
+        ))
+    }
+  return (
+    <div className="expenses">
+      <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter>
+      
+        { 
+           expensesContent
+         }
+      
+      
     </div>
   );
 }

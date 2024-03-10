@@ -1,55 +1,50 @@
-/* Overall form layout and spacing */
-form {
-    max-width: 400px; /* Set a max-width for the form to make it smaller */
-    margin: 2rem auto;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Styles for each form control group */
-  .new-expense__controls {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Use gap to evenly space children */
-  }
-  
-  .new-expense__control {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .new-expense__control label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem; /* Slightly reduce font size */
-  }
-  
-  .new-expense__control input {
-    font: inherit;
-    padding: 0.4rem; /* Reduce padding to decrease height */
-    border-radius: 4px; /* Smaller border radius for a more subtle look */
-    border: 1px solid #ccc;
-    font-size: 0.9rem; /* Match input font size with label */
-  }
-  
-  /* Button styling */
-  .new-expense__actions {
-    text-align: right;
-    margin-top: 1rem; /* Ensure there's some space above the button */
-  }
-  
-  .new-expense__actions button {
-    font-size: 0.9rem; /* Reduce button font size */
-    color: white;
-    background-color: #40005d;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .new-expense__actions button:hover,
-  .new-expense__actions button:active {
-    background-color: #510674;
-  }
-  
+/* Styles the overall container of the form controls, ensuring they stack vertically */
+
+.new-expense__controls {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* Styles each control group, containing a label and an input */
+.new-expense__control {
+  margin-bottom: 1rem; /* Adds space between each control group */
+}
+
+/* Styles the labels for better visibility and alignment */
+.new-expense__control label {
+  display: block; /* Ensures the label takes its own line */
+  margin-bottom: 0.5rem; /* Adds space between the label and its input field */
+  font-weight: bold; /* Makes text bold for better readability */
+}
+
+/* Uniform styles for all input fields to ensure consistency */
+.new-expense__control input {
+  width: 20%; /* Ensures input fields take up the full width of their container */
+  padding: 0.5rem; /* Adds padding inside the input for better text visibility and comfort */
+  border: 1px solid #ccc; /* Adds a subtle border around the input */
+  border-radius: 4px; /* Rounds the corners of the input fields */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+}
+
+/* Styles the action section of the form, typically containing buttons */
+.new-expense__actions {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-top: 1rem; /* Adds space between the last control and the action buttons */
+}
+
+/* Styles the submit button for better visibility and interactivity */
+.new-expense__actions button {
+  padding: 0.5rem 2rem; /* Adds padding for a larger clickable area */
+  background-color: #56884c; /* Sets a primary color for the button */
+  color: white; /* Text color for contrast */
+  border: none; /* Removes the default border */
+  border-radius: 4px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+/* Adds a subtle interaction feedback on hover */
+.new-expense__actions button:hover {
+  background-color: #a1b300; /* Darkens the button color for a hover effect */
+}

@@ -49,8 +49,8 @@ function titleChangeHandler(event)
  }
 
     return(
-    <form  onSubmit={handleSubmit}>
-      <div className='new-expense__controls'> 
+    <form  onSubmit={handleSubmit} >
+      <div className='new-expense__controls form-container' > 
        <div className='new-expense__control'> 
        <label> Tittle </label>
        <input type="Text" value={enteredTitle} onChange={titleChangeHandler} />
