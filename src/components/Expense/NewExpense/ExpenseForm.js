@@ -9,6 +9,7 @@ function ExpenseForm(props)
    const [enteredTitle,setEnteredTitle]=useState('');
    const [enteredAmount,setEnteredAmount]=useState('');
    const [enteredDate,setEnteredDate]=useState('')
+   const [enteredLocation,setEnteredLocation]=useState('')
 function titleChangeHandler(event)
 {    setEnteredTitle(event.target.value)
     //  setUserInput((prevState)=> { 
@@ -27,18 +28,24 @@ function titleChangeHandler(event)
   //   return ({...userInput,enteredDate:event.target.value})
   // })
  }  
+ function locationChangeHandler(event)
+ {
+  setEnteredLocation(event.target.value)
+ }
  function handleSubmit(e)
  { e.preventDefault()
  const expData= {
   title:enteredTitle,
   amount:enteredAmount,
-  date:new Date(enteredDate)
+  date:new Date(enteredDate),
+  location: enteredLocation
  } 
  props.onSaveExpenseData(expData);
- console.log(expData)
+ 
   setEnteredTitle('');
   setEnteredDate('');
   setEnteredAmount('')
+  setEnteredLocation('')
  }
 
     return(
@@ -57,6 +64,10 @@ function titleChangeHandler(event)
        <div className='new-expense__control'> 
        <label> Date</label>
        <input type="Date" min="2019-12-01" max="2024-03-06" value={enteredDate} onChange={dateChangeHandler}/> 
+       </div>
+       <div className='new-expense__control'> 
+         <label> Location</label>
+         <input type="text" value={enteredLocation} onChange={locationChangeHandler}/>
        </div>
        
       </div>

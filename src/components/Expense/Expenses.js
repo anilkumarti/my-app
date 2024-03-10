@@ -13,8 +13,10 @@ function Expenses(props) {
   return (
     <div className="expenses">
       <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter>
-      {props.expenses &&
-        props.expenses.map((element) => (
+      {
+      
+      props.expenses && props.expenses.filter(item=>item.date.getFullYear().toString()==filteredYear)
+     .map((element) => (
           <ExpenseItem
           key={element.id}
             title={element.title}

@@ -7,10 +7,10 @@ import NewExpense from './components/Expense/NewExpense/NewExpense';
 
 const App=()=> 
  { 
-    const [expenses,setExpenses]=useState([ {title: "Gym", amount: 235, date:new Date(2011,11,28),location: "Rampur" },
-{title: "Wine and Dine", amount: 235, date:new Date(2011,11,28),location: "Jodhpur" },
-{title: "Fees", amount: 235, date:new Date(2011,11,28),location: "Honeypur" },
-{title: "Other taxes", amount: 235, date:new Date(2011,11,28),location: "Bhilpur" }
+    const [expenses,setExpenses]=useState([ { id: "1", title: "Gym", amount: 235, date:new Date(2020,11,28),location: "Rampur" },
+{id: "2",title: "Wine and Dine", amount: 235, date:new Date(2018,11,28),location: "Jodhpur" },
+{id: "3",title: "Fees", amount: 235, date:new Date(2021,11,28),location: "Honeypur" },
+{id: "4",title: "Other taxes", amount: 235, date:new Date(2023,11,28),location: "Bhilpur" }
 
 ]);
  
@@ -26,7 +26,7 @@ const App=()=>
   return (
     <Card>
        <h1> Expense Tracker</h1>
-        console.log(expenses)
+       
       <NewExpense onAddExpense={addExpenseHandle}/>
       <Expenses expenses={expenses}/>
      
