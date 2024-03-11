@@ -47,10 +47,13 @@ function titleChangeHandler(event)
   setEnteredAmount('')
   setEnteredLocation('')
  }
+  const cancelHandler=(e)=>
+  { props.onCancel();
 
+  }
     return(
     <form  onSubmit={handleSubmit} >
-      <div className='new-expense__controls form-container' > 
+      <div className='new-expense__controls' > 
        <div className='new-expense__control'> 
        <label> Tittle </label>
        <input type="Text" value={enteredTitle} onChange={titleChangeHandler} />
@@ -72,8 +75,12 @@ function titleChangeHandler(event)
        
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+       
+        <button type="submit">Add Expense</button> 
+        
+        <button type="submit" onClick={cancelHandler}>Cancel</button>
       </div>
+     
     </form>
     );
 

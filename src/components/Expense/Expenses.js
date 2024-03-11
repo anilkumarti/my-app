@@ -14,7 +14,7 @@ function Expenses(props) {
     { return item.date.getFullYear().toString()===filteredYear});
 
     let expensesContent=<p>Only single Expense here. Please add more..</p>;
-    if(expensesContent.length>0)
+    if(filteredExpneses.length>0)
     {
  expensesContent=filteredExpneses.map((element) => (
           <ExpenseItem
