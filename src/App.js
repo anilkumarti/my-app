@@ -16,8 +16,8 @@ const App=()=>
  
 
  const addExpenseHandle=expense=> {
-  console.log("in App Js");
-  console.log(expense);
+ 
+  
    setExpenses((prevExpenses)=> {
     return [expense,...prevExpenses]
    })

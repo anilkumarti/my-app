@@ -1,50 +1,76 @@
-/* Styles the overall container of the form controls, ensuring they stack vertically */
+/* ExpenseForm.css */
 
 .new-expense__controls {
-  display: flex;
-  flex-direction: column;
-
+  margin-bottom: 1rem;
 }
 
-/* Styles each control group, containing a label and an input */
 .new-expense__control {
-  margin-bottom: 1rem; /* Adds space between each control group */
+  margin-bottom: 0.5rem;
 }
 
-/* Styles the labels for better visibility and alignment */
 .new-expense__control label {
-  display: block; /* Ensures the label takes its own line */
-  margin-bottom: 0.5rem; /* Adds space between the label and its input field */
-  font-weight: bold; /* Makes text bold for better readability */
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #444;
 }
 
-/* Uniform styles for all input fields to ensure consistency */
-.new-expense__control input {
-  width: 20%; /* Ensures input fields take up the full width of their container */
-  padding: 0.5rem; /* Adds padding inside the input for better text visibility and comfort */
-  border: 1px solid #ccc; /* Adds a subtle border around the input */
-  border-radius: 4px; /* Rounds the corners of the input fields */
-  box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+.new-expense__control input[type="text"],
+.new-expense__control input[type="number"],
+.new-expense__control input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  font: inherit;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
 }
 
-/* Styles the action section of the form, typically containing buttons */
+.new-expense__control input[type="text"]:focus,
+.new-expense__control input[type="number"]:focus,
+.new-expense__control input[type="date"]:focus {
+  outline: none;
+  border-color: #4f005f;
+  background-color: #ebebef;
+}
+
 .new-expense__actions {
   display: flex;
-  justify-content: flex-end; /* Aligns buttons to the right */
-  margin-top: 1rem; /* Adds space between the last control and the action buttons */
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
-/* Styles the submit button for better visibility and interactivity */
 .new-expense__actions button {
-  padding: 0.5rem 2rem; /* Adds padding for a larger clickable area */
-  background-color: #56884c; /* Sets a primary color for the button */
-  color: white; /* Text color for contrast */
-  border: none; /* Removes the default border */
-  border-radius: 4px; /* Rounds the corners of the button */
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #40005d;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-/* Adds a subtle interaction feedback on hover */
-.new-expense__actions button:hover {
-  background-color: #a1b300; /* Darkens the button color for a hover effect */
+.new-expense__actions button:hover,
+.new-expense__actions button:active {
+  background-color: #510674;
+}
+
+.new-expense__actions button[type="submit"] {
+  background-color: #00802b;
+}
+
+.new-expense__actions button[type="submit"]:hover,
+.new-expense__actions button[type="submit"]:active {
+  background-color: #005f1f;
+}
+
+/* Style specifically for the cancel button to differ from the submit button */
+.new-expense__actions button[type="button"] {
+  background-color: #a00;
+}
+
+.new-expense__actions button[type="button"]:hover,
+.new-expense__actions button[type="button"]:active {
+  background-color: #f00;
 }
